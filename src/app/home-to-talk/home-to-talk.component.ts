@@ -1,17 +1,99 @@
 import { Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+
+declare var $: any;
+//import * as RecordRTC from 'recordrtc';
+import * as RecordRTC from 'recordrtc';
+
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-home-to-talk',
   templateUrl: './home-to-talk.component.html',
   styleUrls: ['./home-to-talk.component.css']
 })
 export class HomeToTalkComponent {
+  title = 'micRecorder';
+  //Lets declare Record OBJ
+  record: any;
+  //Will use this flag for toggeling recording
+  recording = false;
+  //URL of Blob
+  url: any;
+  error: any;
 
-  constructor() { 
+  constructor(private domSanitizer: DomSanitizer, private http: HttpClient) {
+    
+  }
+
+  sanitize(url: string) {
+    return this.domSanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  initiateRecording() {
+    this.recording = true;
+    let mediaConstraints = {
+    video: false,
+    audio: true
+    };
+    navigator.mediaDevices.getUserMedia(mediaConstraints).then(this.successCallback.bind(this), this.errorCallback.bind(this));
+  }
+  /**
+  * Will be called automatically.
+  */
+  successCallback(stream: MediaStream) {
+  
+  var options = {
+    mimeType: "audio/wav",
+    numberOfAudioChannels: 2,
+    sampleRate: 44100
+  };
+  //16000
+  //Start Actuall Recording
+  var StereoAudioRecorder = RecordRTC.StereoAudioRecorder;
+  this.record = new StereoAudioRecorder(stream); //options
+  this.record.record();
+  }
+  /**
+  * Stop recording.
+  */
+  stopRecording() {
+    this.recording = false;
+    this.record.stop(this.processRecording.bind(this));
+
+
+
+  }
+  /**
+  * processRecording Do what ever you want with blob
+  * @param  {any} blob Blog
+  */
+  processRecording(blob: Blob) {
+    const formData = new FormData();
+    formData.append('video', blob, 'recorded-video.webm');
+
+    this.http.post('https://localhost:7129/Home/Upload', formData).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+
+    this.url = URL.createObjectURL(blob);
+    console.log("blob", blob);
+    console.log("url", this.url);
+
 
     
   }
+  /**
+  * Process Error.
+  */
+  errorCallback(error: any) {
+    this.error = 'Can not play audio in your browser';
+  }
+  ngOnInit() {}
+    
   ngAfterViewInit() {
     
     console.log("init");
