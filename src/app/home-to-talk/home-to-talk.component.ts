@@ -73,12 +73,12 @@ export class HomeToTalkComponent {
   processRecording(blob: Blob) {
     const formData = new FormData();
     formData.append('video', blob, 'recorded-video.webm');
-
-    this.http.post('https://localhost:7129/Home/Upload', formData).subscribe(
+    console.log("begin")
+    this.http.post<any>('https://localhost:7129/Home/Upload', formData).subscribe(
       response => console.log(response),
       error => console.error(error)
     );
-
+    console.log("end")
     this.url = URL.createObjectURL(blob);
     console.log("blob", blob);
     console.log("url", this.url);
