@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { isDevMode } from '@angular/core';
 
 
 declare var $: any;
@@ -8,6 +8,8 @@ declare var $: any;
 import * as RecordRTC from 'recordrtc';
 
 import { DomSanitizer } from '@angular/platform-browser';
+
+
 
 @Component({
   selector: 'app-home-to-talk',
@@ -25,7 +27,11 @@ export class HomeToTalkComponent {
   error: any;
 
   constructor(private domSanitizer: DomSanitizer, private http: HttpClient) {
-    
+    if (isDevMode()) {
+      console.log("Development")
+    } else {
+      console.log("Production")
+    }
   }
 
   sanitize(url: string) {
@@ -74,9 +80,9 @@ export class HomeToTalkComponent {
     const formData = new FormData();
     formData.append('video', blob, 'recorded-video.webm');
     console.log("begin")
-    this.http.post<any>('https://localhost:7129/Home/Upload', formData).subscribe(
-      response => console.log(response),
-      error => console.error(error)
+      this.http.post<any>('https://localhost:7129/Home/Upload', formData).subscribe(
+        response => console.log(response),
+        error => console.error(error)
     );
     console.log("end")
     this.url = URL.createObjectURL(blob);

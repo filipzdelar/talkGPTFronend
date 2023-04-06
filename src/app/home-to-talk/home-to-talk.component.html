@@ -1,23 +1,22 @@
-<p>htest!</p>
 <div class="form-group">
-    <!--
-    <button class="btn btn-primary btn-block" (click)="talkToBot()">
-        Talk to Bot
-    </button>
-    <button class="btn btn-primary btn-block" (click)="IfNeededBot()">
-        If Needed Bot
-    </button>
-    <button class="btn btn-primary btn-block" (click)="endTalkBot()">
-        End Talk Bot
-    </button>--->
-
-    <div style="text-align:center;margin-top: 200px;" >
-        <button (click)="initiateRecording()" class="btn btn-primary" *ngIf="!recording" style="cursor: pointer;background-color: green;color: white;font-size: 40px;"> Start Recording </button>
-        <button (click)="stopRecording()" class="btn btn-danger" *ngIf="recording" style="cursor: pointer;background-color: red;color: white;font-size: 40px;"> Stop Recording </button>
-        <audio controls="" *ngIf="url">
-        <source [src]="sanitize(url)" type="audio/wav">
-        </audio>
+    <div class="parent-container">
+        <div class="child-div">
+            <h1>Welcome to talkGPT!</h1>
+            <img src="../../assets/images/bot.png" alt="BotGig Logo">
         </div>
+    </div>
+    <div class="text-center my-5">
 
-</div>
-
+      <button (click)="initiateRecording()" class="btn btn-lg btn-success" *ngIf="!recording">
+        <i class="fas fa-microphone"></i> Start Recording
+      </button>
+      <button (click)="stopRecording()" class="btn btn-lg btn-danger" *ngIf="recording">
+        <i class="fas fa-stop"></i> Stop Recording
+      </button>
+      <div class="mt-4" *ngIf="url">
+        <audio controls>
+          <source [src]="sanitize(url)" type="audio/wav">
+        </audio>
+      </div>
+    </div>
+  </div>
