@@ -15,6 +15,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { HomeToTalkComponent } from './home-to-talk/home-to-talk.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeToTalkComponent } from './home-to-talk/home-to-talk.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    HomeToTalkComponent
+    HomeToTalkComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

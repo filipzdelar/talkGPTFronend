@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffff;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 20px;
+  }
+  
+  a {
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .element1 {
+    display:inline;
+  }
+
+  .element2 {
+    display:inline;
+  }
