@@ -14,8 +14,22 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-home-to-talk',
   templateUrl: './home-to-talk.component.html',
-  styleUrls: ['./home-to-talk.component.css']
+  styleUrls: ['./home-to-talk.component.css'],
+  template: `
+    <div>
+      <h3>{{ question.label }}</h3>
+      <select [(ngModel)]="selectedOption">
+        <option *ngFor="let opt of question.options" 
+          [value]="opt.key" 
+          [selected]="opt.selected == true">
+          {{ opt.selected ? '*' : '' }} {{ opt.value }}
+        </option>
+      </select>
+    </div>
+  `
 })
+
+
 export class HomeToTalkComponent {
   title = 'micRecorder';
   //Lets declare Record OBJ
@@ -25,6 +39,20 @@ export class HomeToTalkComponent {
   //URL of Blob
   url: any;
   error: any;
+  selectedLanguage: string = 'en';
+  question = {
+    label: 'Select an option:',
+    options: [
+      { key: 'opt1', value: 'English', selected: false },
+      { key: 'opt2', value: 'France', selected: true },
+      { key: 'opt3', value: 'German', selected: false },
+      { key: 'opt3', value: 'Indian', selected: false },
+      { key: 'opt3', value: 'Cheeness', selected: false },
+      { key: 'opt3', value: 'Serbian', selected: false }
+    ]
+  };
+  selectedOption = 'opt2';
+
 
   constructor(private domSanitizer: DomSanitizer, private http: HttpClient) {
     if (isDevMode()) {
@@ -174,6 +202,10 @@ export class HomeToTalkComponent {
 
   }
 
-  
+  changeLanguage(language: string) {
+    this.selectedLanguage = language;
+    // Call a translation service or update the language of your app here
+  }
 
 }
+

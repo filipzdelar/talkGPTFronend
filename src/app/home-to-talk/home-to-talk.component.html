@@ -19,4 +19,25 @@
         </audio>
       </div>
     </div>
+
+
+    <label>Choose language </label>
+    <select [(ngModel)]="selectedOption" class="custom-select">
+      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+    <!--
+    <option *ngFor="let opt of question.options" 
+    [value]="opt.key" 
+    [selected]="opt.selected == true">
+        {{opt.selected+opt.value}} 
+</option>-->
+
+ <!--
+    <select (change)="changeLanguage(($event.target as HTMLSelectElement).value)" [(ngModel)]="selectedLanguage">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+    </select>-->
   </div>
