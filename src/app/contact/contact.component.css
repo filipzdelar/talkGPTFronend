@@ -30,6 +30,8 @@ body {
   }
 
   .element1 {
+    height: 21px;
+    width: 22px;
     display:inline;
   }
 

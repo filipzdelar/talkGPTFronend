@@ -17,6 +17,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { HomeToTalkComponent } from './home-to-talk/home-to-talk.component';
 import { ContactComponent } from './contact/contact.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     BoardUserComponent,
     HomeToTalkComponent,
     ContactComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

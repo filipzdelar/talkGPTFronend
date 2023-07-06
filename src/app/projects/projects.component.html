@@ -1,0 +1,15 @@
+<section id="projectss">
+    <h2>Projects</h2>
+    <div class="companies">
+      <div class="company" *ngFor="let company of companies">
+        <h3>{{ company.name }}</h3>
+        <div class="projects">
+          <div class="project" *ngFor="let project of company.projects">
+            <img [src]="project.image" [alt]="project.name" class="project-image" />
+            <h4>{{ project.name }}</h4>
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
