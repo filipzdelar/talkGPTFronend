@@ -9,6 +9,13 @@ import { UserService } from '../_services/user.service';
 export class HomeComponent implements OnInit {
   content?: string;
 
+  appName = 'My App';
+  menuItems = [
+    { label: 'Home', route: '/home' },
+    { label: 'About', route: '/about' },
+    { label: 'Contact', route: '/contact' }
+  ];
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
