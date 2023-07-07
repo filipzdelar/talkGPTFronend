@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
 import { ContactComponent } from '../contact/contact.component';
+import { ChartComponent } from '../chart/chart.component';
 import { NgModule } from '@angular/core';
 //import { HomeContactModule } from './home.module'
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   menuItems = [
     { label: 'Home', route: '/home' },
     { label: 'About', route: '/about' },
+    { label: 'Education', route: '/education' },
     { label: 'Contact', route: '/contact' }
   ];
 

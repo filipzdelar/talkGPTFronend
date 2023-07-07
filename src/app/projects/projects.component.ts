@@ -8,20 +8,20 @@ import { Component } from '@angular/core';
 export class ProjectsComponent {
   companies = [
     {
-      name: 'Company A',
       projects: [
         {
-          name: 'FTN',
-          description: 'I worked on this',
-          image: '../../assets/images/FTN.png',
+          name: 'Jovan Jovanović Zmaj Gymnasium',
+          description: 'He attended a specialized mathematics class. During this period, he competed in the fields of mathematics, physics, chess, and programming.',
+          image: '../../assets/images/zmajjovina.png',
+          link: 'https://jjzmaj.edu.rs/vesti/'
         },
         {
-          name: 'Project 2',
-          description: 'Also on this',
+          name: 'Faculty of Technical Sciences',
+          description: "A Bachelor's degree with honors in Computer Science has been attained, showcasing exceptional academic achievements and a strong commitment to the field.",
           image: '../../assets/images/FTN_building.jfif',
+          link: 'http://ftn.uns.ac.rs/691618389/fakultet-tehnickih-nauka'
         },
       ],
     },
-    // Add more companies and their projects as needed
   ];
 }

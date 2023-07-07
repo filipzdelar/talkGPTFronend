@@ -18,6 +18,7 @@ import { HomeToTalkComponent } from './home-to-talk/home-to-talk.component';
 import { ContactComponent } from './contact/contact.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProjectsComponent } from './projects/projects.component';
     HomeToTalkComponent,
     ContactComponent,
     FeedbackComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

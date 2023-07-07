@@ -14,7 +14,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home-to-talk', component: HomeToTalkComponent },
   { path: 'contact', component: ContactComponent },
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'projects', component: ProjectsComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({
