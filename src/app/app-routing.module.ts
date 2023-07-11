@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { HomeToTalkComponent } from './home-to-talk/home-to-talk.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
@@ -16,7 +15,6 @@ import { ProjectsComponent } from './projects/projects.component';
 const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home-to-talk', component: HomeToTalkComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: 'register', component: RegisterComponent },
