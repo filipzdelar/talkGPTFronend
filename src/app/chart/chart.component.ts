@@ -1,15 +1,29 @@
 import { Component } from '@angular/core';
 
+interface Company {
+  name: string;
+  image: string;
+  data: string;
+  title: string;
+  projects: {
+    image: string;
+    description: string;
+  }[];
+  link: string;
+  expanded: boolean;
+}
+
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent {
-  companies = [
+  companies: Company[] = [
     {
       name: 'Panonit',
       image: '../../assets/images/Panonit.png',
+      data: 'data',
       title: 'data',
       link: 'https://panonit.com/homepage',
       projects: [
@@ -26,6 +40,7 @@ export class ChartComponent {
           description: "I was involved in the development of a web server that had to communicate with remote digital advertising displays. Specifically, my role in this project centered around the back-end service, where I was responsible for managing external API calls within the software.",
         },
       ],
+      expanded: false
     },
     {
       name: 'Codolis',
@@ -39,6 +54,7 @@ export class ChartComponent {
           description: 'For this part-time job, I was involved in researching and training models for a project focused on building custom deep neural networks. These networks were specifically designed for the classification and synthesis of one-dimensional medical ECG signals, with the aim of automating the recognition of heart anomalies. The primary goal of the project was to expand the dataset size for classification by synthesizing additional data through adjustments to state-of-the-art models.',
         }
       ],
+      expanded: false
     },
     {
       name: 'Continental',
@@ -52,6 +68,24 @@ export class ChartComponent {
           description: 'The developer played an integral role in establishing autonomous communication between vehicles and remote servers (Ramsas 1.5 project).'
         }
       ],
+      expanded: false
     },
   ]
+  toggleDescription(company: Company) {
+    company.expanded = !company.expanded;
+  }
+
+  getPreviewText(description: string, isExpanded: boolean, maxLength: number): string {
+    if (isExpanded)
+    {
+      return description;
+    };
+
+    if (description.length <= maxLength) {
+      return description;
+    } else {
+      return description.substr(0, maxLength) + '...';
+    }
+  }
+
 }

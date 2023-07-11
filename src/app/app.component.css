@@ -2,7 +2,8 @@
 body
 {
 
-  overflow: auto;
+  overflow-x: hidden;
+
 }
 
 h1, h2, h3, p, ul, li {
@@ -58,3 +59,6 @@ h1, h2, h3, p, ul, li {
     opacity: 1;
   }
   
+
+
+

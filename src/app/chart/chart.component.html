@@ -1,42 +1,27 @@
-<div class="container">
+<section id="projects">
+  <div class="container">
     <div class="row">
-  
-      <!--
-
-        <div class="company" *ngFor="let company of companies">
-      <div class="projects">
-        <div class="project" *ngFor="let project of company.projects">
-          <img [src]="project.image" [alt]="project.name" class="project-image" />
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description }}</p>
-          <a href={{project.link}} target="_blank">Visit Official Web Page</a>
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let company of companies">
+        <div class="card h-100">
+          <div class="position-relative">
+            <img [src]="company.image" class="card-img-top" alt="{{ company.name }}">
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ company.name }}</h5>
+            <hr>
+            <div class="project">
+              <div [ngClass]="{'collapsed-description': !company.expanded}">
+                <p class="card-text">{{ getPreviewText(company.projects[0].description, company.expanded, 100) }}</p>
+              </div>
+              <a (click)="toggleDescription(company)" class="read-more-link">{{ company.expanded ? 'Read Less' : 'Read More' }}</a>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="{{ company.link }}" target="_blank" class="btn btn-primary btn-block">Visit Official Web Page</a>
+          </div>
         </div>
       </div>
     </div>
-      -->
-
-      <div class="company" *ngFor="let company of companies">
-        
-        
-        <div class="card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src={{company.image}} class="img-fluid"  class="picture"/>
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">{{company.name}}</h4>
-              <div class="company" *ngFor="let project of company.projects">
-                    <p>
-                        {{ project.description}}
-                    </p>
-              </div>
-              <a href={{company.link}} target="_blank" class="btn btn-primary">Button</a>
-            </div>
-        </div>
-        <br>
-    </div>
-  
-    </div>
   </div>
+</section>

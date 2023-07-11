@@ -4,6 +4,7 @@ import { ContactComponent } from '../contact/contact.component';
 import { ChartComponent } from '../chart/chart.component';
 import { NgModule } from '@angular/core';
 //import { HomeContactModule } from './home.module'
+import { SkillsComponent } from '../skills/skills.component';
 
 @Component({
   selector: 'app-home',

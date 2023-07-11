@@ -9,12 +9,16 @@ h2, p{
     align-items: center;
   }
 
-  .child-div {
-    width: 50%;
-    height: 50%;
-    text-align: center;
-    margin: auto;
-  }
+.child-div {
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+}
   
 
 

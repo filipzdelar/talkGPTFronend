@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Technologies Used</h2>
+    <ul>
+      <li *ngFor="let technology of technologies">
+        <div class="technology">
+          <a [href]="technology.link" target="_blank">
+            <img [src]="technology.image" [alt]="technology.name" class="technology-image">
+          </a>
+          <div class="technology-details">
+            <h3>{{ technology.name }}</h3>
+            <div class="progress">
+              <div class="progress-bar" [style.width]="technology.proficiency + '%'">
+                <span class="progress-value">{{ technology.proficiency }}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

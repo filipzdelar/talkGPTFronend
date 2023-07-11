@@ -19,6 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ChartComponent } from './chart/chart.component';
+import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ChartComponent } from './chart/chart.component';
     ContactComponent,
     FeedbackComponent,
     ProjectsComponent,
-    ChartComponent
+    ChartComponent,
+    ScrollButtonComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
