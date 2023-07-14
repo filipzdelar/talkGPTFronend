@@ -11,9 +11,15 @@
   text-align: center;
 }
 
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .project {
   display: flex;
-  flex-direction: column;
+  flex-basis: calc(50% - 10px);
   align-items: center;
   padding: 20px;
   background-color: #f2f2f2;

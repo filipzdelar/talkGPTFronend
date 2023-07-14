@@ -1,21 +1,29 @@
 <div class="container">
-    <h2>Technologies Used</h2>
-    <ul>
-      <li *ngFor="let technology of technologies">
-        <div class="technology">
-          <a [href]="technology.link" target="_blank">
-            <img [src]="technology.image" [alt]="technology.name" class="technology-image">
-          </a>
-          <div class="technology-details">
-            <h3>{{ technology.name }}</h3>
-            <div class="progress">
-              <div class="progress-bar" [style.width]="technology.proficiency + '%'">
-                <span class="progress-value">{{ technology.proficiency }}%</span>
+  <h2>Technologies Used</h2>
+  <ul>
+    <ul class="group-list">
+      <li *ngFor="let group of groups_t; let i = index" class="group-item">
+        <div class="group-header" (click)="toggleGroup(i)">
+          <h3>{{ group.name }}</h3>
+        </div>
+        <ul *ngIf="group.expanded" class="element-list">
+          <li *ngFor="let technology of group.tehnology_groups">
+            <div class="technology">
+              <a [href]="technology.link" target="_blank">
+                <img [src]="technology.image" [alt]="technology.name" class="technology-image">
+              </a>
+              <div class="technology-details">
+                <h3>{{ technology.name }}</h3>
+                <div class="progress">
+                  <div class="progress-bar" [style.width]="technology.proficiency + '%'">
+                    <span class="progress-value">{{ technology.proficiency }}%</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </li>
     </ul>
-  </div>
-  
+    </ul>
+</div>
