@@ -34,6 +34,12 @@ export class SkillsComponent {
       image: '../../assets/images/skills/rabbitmq.svg',
       link: '',
       proficiency: 70
+    },
+    {
+      name: 'MSSQL',
+      image: '../../assets/images/skills/mysql.png',
+      link: '',
+      proficiency: 70
     }
   ];
 
