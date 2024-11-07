@@ -1,6 +1,12 @@
+h1 {
+  text-align: center;
+}
+
+
 h2, p{
   
   text-align: center;
+  border-bottom: 2px solid #007bff; 
 }
 
 .parent-container {

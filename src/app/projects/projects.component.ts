@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
+
+
 
 @Component({
   selector: 'app-projects',
@@ -6,6 +10,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+  animal: string = "";
+  constructor(public dialog: MatDialog) {}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PopupComponent, {
+      width: '1250px',
+      disableClose: true,
+      backdropClass: 'custom-backdrop',
+      data: {name: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
   companies = [
     {
       projects: [
@@ -25,3 +44,5 @@ export class ProjectsComponent {
     },
   ];
 }
+
+

@@ -11,19 +11,31 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { PersonalComponent } from './personal/personal.component';
+import { ProfessionalComponent } from './professional/professional.component';
 
 const routes: Routes = [
-  { path: 'home', redirectTo: '', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'feedback', component: FeedbackComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
-  { path: 'projects', component: ProjectsComponent},
-  { path: '', component: HomeComponent }
+  // { path: 'home', redirectTo: '', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'contact', component: ContactComponent },
+  // { path: 'register', component: RegisterComponent },
+  // { path: 'profile', component: ProfileComponent },
+  // { path: 'user', component: BoardUserComponent },
+  // { path: 'mod', component: BoardModeratorComponent },
+  // { path: 'admin', component: BoardAdminComponent },
+  // { path: 'projects', component: ProjectsComponent},
+
+  { path: 'professional', component: ProfessionalComponent
+   },
+  { path: 'personal', component: PersonalComponent,
+    children: [
+      { path: 'feedback', component: FeedbackComponent },
+      { path: '', component: HomeComponent },
+      
+    ] },
+  { path: 'relational', component: RelationshipComponent },
+  { path: '**', component: ProfessionalComponent }
 ];
 
 @NgModule({

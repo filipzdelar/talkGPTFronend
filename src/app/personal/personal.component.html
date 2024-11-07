@@ -1,0 +1,33 @@
+<header>
+    <img src="../../assets/images/space.jpg" alt="A panoramic view of space">
+    <!-- <app-scroll-button></app-scroll-button> -->
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- <nav>
+        <a routerLink="">Home</a>
+        <a routerLink="about">About</a>
+    </nav>
+    <router-outlet></router-outlet> -->
+</header>
+
+<main >
+    <router-outlet></router-outlet>
+</main>
+
+<!-- <footer>
+    <p>&copy; 2023 Filip Zdelar. All rights reserved.</p>
+</footer> -->
+<!-- -->
+
+
+<a class="btn btn-primary position-fixed" [routerLink]="['/professional']" style="bottom: 20px; right: 20px;" role="button">
+    <span class="iconify" data-icon="mdi:briefcase" data-inline="false"></span>
+  </a>

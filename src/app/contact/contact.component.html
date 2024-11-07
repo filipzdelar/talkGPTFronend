@@ -1,90 +1,35 @@
-<html>
-<head>
-</head>
-<body>
-    <!--
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/bot.png" height="20px" alt="Bot Logo">
-        <p class="element2">Side Project 1: <a href="https://red-beach-0ecb7be03.2.azurestaticapps.net/">https://red-beach-0ecb7be03.2.azurestaticapps.net/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/exemia.png" height="20px" alt="Eximia Logo">
-        <p class="element2">Side Project 2: <a href="https://eximia.one/">https://eximia.one/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/facebook.png" height="20px" alt="FaceBook Logo">
-      <p class="element2">Facebook: <a href="https://www.facebook.com/your-facebook-page">https://www.facebook.com/your-facebook-page</a></p>
-    </div>-->
-    <!--
-    <div class="wrapper">
-        <p class="element2">Filip Zdelar main site: <a href="https://filipzdelar.com/">https://filipzdelar.com/</a></p>
-    </div>
-    -->
-	<h3 id="contact">Contact Information</h3>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/Gmail.png" height="20px" alt="Gmail Logo">
-        <p class="element2">Mail: <a href="mailto:filipzdelar@gmail.com">filipzdelar@gmail.com</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/phone.png" height="20px" alt="Phone Logo">
-        <p class="element2">Phone: +381 069-1998-098</p>
-      </div>
-      <div class="wrapper">
-        <img class="element1" src="../../assets/images/map.png" height="20px" alt="Address Logo">
-        <p class="element2">Address: Dr. Ribara Ivana 13a, Novi Sad, Serbia</p>
-      </div>
-      <div class="wrapper">
-          <img class="element1" src="../../assets/images/linkedin.webp" height="20px" alt="LinkedIn Logo">
-          <p class="element2">LinkedIn: <a href="https://www.linkedin.com/in/filip-zdelar/">https://www.linkedin.com/in/filip-zdelar/</a></p>
-      </div>
 
-      <br>
-      <br>
-      
-    <h3>Repositories</h3>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/gitlab.webp" height="20px" alt="GitLab Logo">
-        <p class="element2">GitLab: <a href="https://gitlab.com/filipzdelar/">https://gitlab.com/filipzdelar/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/github.webp" height="20px" alt="GitHub Logo">
-        <p class="element2">GitHub: <a href="https://github.com/filipzdelar/">https://github.com/filipzdelar/</a></p>
-    </div>
-    <center>
-    <button class="download-button" (click)="downloadCV()">Download CV</button>
-</center>
-    <!--
-    <h3>University Repositories</h3>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/gitlab.webp" height="20px" alt="GitLab Logo">
-        <p class="element2">GitLab: <a href="https://gitlab.com/filipzdelar/">https://gitlab.com/filipzdelar/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/github.webp" height="20px" alt="GitHub Logo">
-        <p class="element2">GitHub: <a href="https://github.com/filipzdelar/">https://github.com/filipzdelar/</a></p>
-    </div>
+        <section id="info">
+            <h3>Contact Information & Repositories</h3>
+            <div class="info-container">
+                <!-- Contact Information -->
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/Gmail.png" alt="Gmail Logo">
+                    <p class="info-text"><a href="mailto:filipzdelar@gmail.com">filipzdelar@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/phone.png" alt="Phone Logo">
+                    <p class="info-text">+381 69 1998 098</p>
+                </div>
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/map.png" alt="Address Logo">
+                    <p class="info-text">Branimira Cosica 17, Novi Sad, Serbia</p>
+                </div>
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/linkedin.webp" alt="LinkedIn Logo">
+                    <p class="info-text"><a href="https://www.linkedin.com/in/filip-zdelar/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+                </div>
+                <!-- Repositories -->
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/gitlab.webp" alt="GitLab Logo">
+                    <p class="info-text"><a href="https://gitlab.com/filipzdelar/" target="_blank" rel="noopener noreferrer">GitLab</a></p>
+                </div>
+                <div class="info-item">
+                    <img class="icon" src="../../assets/images/github.webp" alt="GitHub Logo">
+                    <p class="info-text"><a href="https://github.com/filipzdelar/" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                </div>
+            </div>
+        </section>
 
-    
-    <h3>Repositories</h3>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/gitlab.webp" height="20px" alt="GitLab Logo">
-        <p class="element2">GitLab: <a href="https://gitlab.com/filipzdelar/">https://gitlab.com/filipzdelar/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/github.webp" height="20px" alt="GitHub Logo">
-        <p class="element2">GitHub: <a href="https://github.com/filipzdelar/">https://github.com/filipzdelar/</a></p>
-    </div>
+        <button class="download-button" onclick="downloadCV()">Download CV</button>
 
-    
-    <h3>Repositories</h3>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/gitlab.webp" height="20px" alt="GitLab Logo">
-        <p class="element2">GitLab: <a href="https://gitlab.com/filipzdelar/">https://gitlab.com/filipzdelar/</a></p>
-    </div>
-    <div class="wrapper">
-        <img class="element1" src="../../assets/images/github.webp" height="20px" alt="GitHub Logo">
-        <p class="element2">GitHub: <a href="https://github.com/filipzdelar/">https://github.com/filipzdelar/</a></p>
-    </div>-->
-
-</body>
-</html>

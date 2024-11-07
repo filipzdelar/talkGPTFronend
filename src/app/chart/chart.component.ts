@@ -44,7 +44,7 @@ export class ChartComponent {
     },
     {
       name: 'Codolis',
-      image: '../../assets/images/Codolis.png',
+      image: '../../assets/images/codolis-logo.jpg',
       data: 'data',
       title: 'data',
       link: 'https://www.continental.com/en/',
@@ -62,6 +62,20 @@ export class ChartComponent {
       data: 'data',
       title: 'data',
       link: 'https://codolis.com/',
+      projects: [
+        {
+          image: '../../assets/images/zmajjovina.png',
+          description: 'The developer played an integral role in establishing autonomous communication between vehicles and remote servers (Ramsas 1.5 project).'
+        }
+      ],
+      expanded: false
+    },
+    {
+      name: 'TIAC',
+      image: '../../assets/images/tiac-logo.png',
+      data: 'data',
+      title: 'data',
+      link: 'https://tiacgroup.com/',
       projects: [
         {
           image: '../../assets/images/zmajjovina.png',

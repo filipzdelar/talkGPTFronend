@@ -20,6 +20,15 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ChartComponent } from './chart/chart.component';
 import { ScrollButtonComponent } from './scroll-button/scroll-button.component';
 import { SkillsComponent } from './skills/skills.component';
+import { PersonalComponent } from './personal/personal.component';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { ProfessionalComponent } from './professional/professional.component';
+import { PopupComponent } from './popup/popup.component';
+
+// Import Angular Material modules
+import { MatButtonModule } from '@angular/material/button'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,15 +45,24 @@ import { SkillsComponent } from './skills/skills.component';
     ProjectsComponent,
     ChartComponent,
     ScrollButtonComponent,
-    SkillsComponent
+    SkillsComponent,
+    ProfessionalComponent,
+    PersonalComponent,
+    RelationshipComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule, // Include in imports
+    MatDialogModule, // Include in imports
+    BrowserAnimationsModule // Required for Angular Material
   ],
-  providers: [httpInterceptorProviders],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders, 
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent] // Only needed for Angular versions before 9
 })
 export class AppModule { }
