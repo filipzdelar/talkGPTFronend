@@ -34,7 +34,8 @@ const routes: Routes = [
       
     ] },
   { path: 'relational', component: RelationshipComponent },
-  { path: '**', component: ProfessionalComponent }
+  { path: '*', component: ChartComponent },
+  { path: '**', component: ChartComponent }
 ];
 
 @NgModule({
