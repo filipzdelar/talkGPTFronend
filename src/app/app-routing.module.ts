@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
@@ -14,6 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ProfessionalComponent } from './professional/professional.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   // { path: 'home', redirectTo: '', pathMatch: 'full' },
@@ -31,7 +30,7 @@ const routes: Routes = [
   { path: 'personal', component: PersonalComponent,
     children: [
       { path: 'feedback', component: FeedbackComponent },
-      { path: '', component: HomeComponent },
+      { path: '', component: ChartComponent },
       
     ] },
   { path: 'relational', component: RelationshipComponent },
