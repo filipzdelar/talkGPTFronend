@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4" *ngFor="let company of companies">
-        <div class="card h-100">
+        <div class="card h-100" [ngClass]="{'current-company': company.isCurrent}">
           <div class="position-relative">
             <img [src]="company.image" class="card-img-top" alt="{{ company.name }}">
             <div class="overlay"></div>
@@ -10,11 +10,18 @@
           <div class="card-body">
             <h5 class="card-title">{{ company.name }}</h5>
             <hr>
-            <div class="project">
-              <div [ngClass]="{'collapsed-description': !company.expanded}">
-                <p class="card-text">{{ getPreviewText(company.projects[0].description, company.expanded, 100) }}</p>
+            <div class="company-info">
+              <!-- Display Start Date and End Date for each company -->
+              <p><strong>Start Date:</strong> {{ company.startDate | date: 'longDate' }}</p>
+              <p *ngIf="!company.isCurrent"><strong>End Date:</strong> {{ company.endDate | date: 'longDate' }}</p>
+              <p *ngIf="company.isCurrent"><strong>Status:  </strong> <span class="badge badge-success">Active</span></p>
+              <hr>
+              <div class="project">
+                <div [ngClass]="{'collapsed-description': !company.expanded}">
+                  <p class="card-text">{{ getPreviewText(company.projects[0].description, company.expanded, 100) }}</p>
+                </div>
+                <a (click)="toggleDescription(company)" class="read-more-link">{{ company.expanded ? 'Read Less' : 'Read More' }}</a>
               </div>
-              <a (click)="toggleDescription(company)" class="read-more-link">{{ company.expanded ? 'Read Less' : 'Read More' }}</a>
             </div>
           </div>
           <div class="card-footer">

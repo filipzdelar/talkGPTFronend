@@ -5,3 +5,10 @@
   .picture img {
     height: 3000px; /* Adjust the height as needed */
   }
+
+.badge-success {
+  background-color: #28a745;  /* Green background for active status */
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}

@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
 
   appName = 'My App';
   menuItems = [
-    { label: 'Home', route: '/home' },
-    { label: 'About', route: '/about' },
+    // { label: 'Home', route: '/home' },
+    // { label: 'About', route: '/about' },
     { label: 'Education', route: '/education' },
     { label: 'Contact', route: '/contact' }
   ];

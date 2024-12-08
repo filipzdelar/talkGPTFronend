@@ -25,17 +25,11 @@ const routes: Routes = [
   // { path: 'admin', component: BoardAdminComponent },
   // { path: 'projects', component: ProjectsComponent},
 
-  { path: 'professional', component: ProfessionalComponent
-   },
-  { path: 'personal', component: PersonalComponent,
-    children: [
-      { path: 'feedback', component: FeedbackComponent },
-      { path: '', component: ChartComponent },
-      
-    ] },
-  { path: 'relational', component: RelationshipComponent },
-  { path: '*', component: ChartComponent },
-  { path: '**', component: ChartComponent }
+  // { path: 'professional', component: ProfessionalComponent},
+  { path: '', component: HomeComponent },
+  // { path: 'relational', component: RelationshipComponent },
+  { path: '*', component: HomeComponent },
+  { path: '**', component: ProfessionalComponent }
 ];
 
 @NgModule({

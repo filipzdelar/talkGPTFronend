@@ -1,23 +1,17 @@
 <section id="education">
-  <h2>Education</h2>
-  <p>
-    <b>Master's Degree in Electrical and Computer Engineering</b><br>
-    Faculty of Technical Sciences, University of Novi Sad, Serbia<br>
-    Master thesis: <em>Sentiment Analysis of Social Media</em><br>
-    <br>
-    <b>Bachelor's Degree in Electrical and Computer Engineering with honors</b><br>
-    Faculty of Technical Sciences, University of Novi Sad, Serbia<br>
-    Bachelor thesis: <em>Imagery Influence of Synthesized Data on Classification Methods for ECG Signals</em><br>
-</p>
-<button mat-raised-button (click)="openDialog()">Pick one</button>
-  <div class="companies">
-    <div class="company" *ngFor="let company of companies">
-      <div class="projects">
-        <div class="project" *ngFor="let project of company.projects">
-          <img [src]="project.image" [alt]="project.name" class="project-image" />
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description }}</p>
-          <a href={{project.link}} target="_blank">Visit Official Web Page</a>
+  <div class="container">
+    <h2>Education</h2>
+    <div class="education-list">
+      <div class="education-item" *ngFor="let education of educations">
+        <div *ngFor="let edu of education.education" class="education-card">
+          <div class="education-image">
+            <img [src]="edu.image" alt="{{ edu.name }}" />
+          </div>
+          <div class="education-content">
+            <h3>{{ edu.name }}</h3>
+            <p>{{ edu.description }}</p>
+            <a href="{{ edu.link }}" target="_blank" class="btn-link">Learn More</a>
+          </div>
         </div>
       </div>
     </div>

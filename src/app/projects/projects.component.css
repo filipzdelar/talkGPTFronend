@@ -1,81 +1,117 @@
-.companies {
-  display: flex;
-  margin-bottom: 20px;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.company {
-  margin-right: 20px; /* Optional spacing between companies */
-}
-
-.centered-heading {
+/* General Section Styling */
+#education {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
   text-align: center;
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+#education h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
 }
 
-.project {
+.education-list {
   display: flex;
-  flex-basis: calc(50% - 10px);
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
   align-items: center;
+}
+
+/* Education Card Styling */
+.education-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.education-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.education-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-right: 2px solid #ddd;
+  border-radius: 8px 0 0 8px;
+}
+
+.education-content {
   padding: 20px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 20px;
+  text-align: left;
 }
 
-.project:hover {
-  transform: scale(1.05);
-}
-
-.project-image {
-  width: 100px;
-  height: 100px;
+.education-content h3 {
+  font-size: 1.8rem;
+  color: #333;
   margin-bottom: 10px;
 }
 
-.mat-dialog-container {
-  /* width: 400px;
-  max-width: 90vw;
-  padding: 20px;
-  border-radius: 8px;
-  background: #fff; Ensure the dialog background is set */
-
-  background: #fff; /* Ensure the dialog content is white */
-  /* Optional: Add box shadow to make the dialog stand out */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure the dialog is properly centered */
-.mat-dialog-content {
-  font-size: 16px;
+.education-content p {
+  font-size: 1rem;
   color: #555;
+  margin-bottom: 20px;
 }
 
-/* Style the action buttons */
-.mat-dialog-actions {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 10px;
-}
-
-button.mat-button {
-  font-size: 14px;
+.education-content .btn-link {
+  display: inline-block;
+  font-size: 1rem;
   color: #007bff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #007bff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button.mat-button:hover {
-  color: #0056b3;
-  text-decoration: underline;
+.education-content .btn-link:hover {
+  background-color: #007bff;
+  color: white;
 }
 
-.custom-backdrop {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey background */
-  pointer-events: auto; /* Ensure that pointer events are applied to the backdrop */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+  }
+
+  .education-image img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .education-content {
+    text-align: center;
+  }
 }
+

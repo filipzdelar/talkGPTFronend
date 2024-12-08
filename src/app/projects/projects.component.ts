@@ -25,9 +25,9 @@ export class ProjectsComponent {
       this.animal = result;
     });
   }
-  companies = [
+  educations = [
     {
-      projects: [
+      education: [
         {
           name: 'Jovan Jovanović Zmaj Gymnasium',
           description: 'He attended a specialized mathematics class. During this period, he competed in the fields of mathematics, physics, chess, and programming.',

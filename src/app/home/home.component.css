@@ -1,108 +1,56 @@
-h1 {
-  text-align: center;
-}
-
-
-h2, p{
-  
-  text-align: center;
-  border-bottom: 2px solid #007bff; 
-}
-
-.parent-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-.child-div {
-  width: 50%;
-  height: 50%;
-  text-align: center;
-  margin: auto;
-}
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* Example CSS styles */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  /* Additional logo styles */
-}
-
-nav {
-  /* Additional navigation styles */
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-nav a:hover {
-  color: #ff0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  position: relative; /* Allows positioning of children relative to the header */
+  overflow: hidden; /* Ensures no overflow outside the header */
+  text-align: center; /* Center-aligns content inside the header */
+  color: white; /* White text color for better contrast on dark background */
+}
+
+header img {
+  width: 100%; /* Ensures the image spans the full width of the header */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the header area */
+  display: block; /* Removes extra space below the image */
+}
+
+nav {
+  position: absolute; /* Positioned absolutely within the header */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Centering effect */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+  padding: 10px; /* Padding around navigation items */
+  border-radius: 5px; /* Rounded corners */
+}
+
+nav ul {
+  list-style-type: none; /* Removes default list styling */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center items horizontally */
+}
+
+nav ul li {
+  margin: 0 10px; /* Spacing between menu items */
+}
+
+nav ul li a {
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from links */
+  font-size: 16px; /* Font size for links */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+nav ul li a:hover {
+  color: #f0f0f0; /* Lighter color on hover */
 }
 
 /* Hero section */
@@ -112,19 +60,68 @@ body, h1, h2, h3, p, ul, li {
   padding: 50px;
 }
 
-/* About section */
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+/* About Section */
 #about {
   background-color: #fff;
   padding: 50px;
 }
 
-/* Projects section */
-#projects {
-  background-color: #f1f1f1;
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2, p {
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+#contact {
   padding: 50px;
 }
 
-#contact {
+/* Projects Section */
+#projects {
+  background-color: #f1f1f1;
   padding: 50px;
 }
 
@@ -140,4 +137,51 @@ body, h1, h2, h3, p, ul, li {
   margin-bottom: 10px;
 }
 
-/* Contact section */
+/* Base button styles */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: scale(1.1); /* Slightly enlarges the button */
+}
+
+/* Section Alignment */
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child-div {
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 1rem;
+}
